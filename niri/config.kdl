@@ -18,34 +18,25 @@ include "recent_windows.kdl"
 // See the binds section below for more spawn examples.
 
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
+// Startup applications
 spawn-at-startup "ironbar"
 spawn-at-startup "alacritty"
 spawn-at-startup "awww-daemon"
 
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
+// startup cli commands
+spawn-sh-at-startup "sleep 1 && awww img /home/adam/Pictures/Wallpapers/slovenia-hilltop.jpg"
 
-// Uncomment this line to ask the clients to omit their client-side decorations if possible.
-// If the client will specifically ask for CSD, the request will be honored.
-// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
-// This option will also fix border/focus ring drawing behind some semitransparent windows.
-// After enabling or disabling this, you need to restart the apps for this to take effect.
+// Ask applications to omit client-side decorators 
 prefer-no-csd
 
 
-// You can change the path where screenshots are saved.
-// A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
 
-// You can also set this to null to disable saving screenshots to disk.
-// screenshot-path null
 
-
+// do not show the hotkeys at startup
 hotkey-overlay {
-    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
     skip-at-startup
 }
 
@@ -58,7 +49,6 @@ xwayland-satellite {
 
 cursor {
     hide-when-typing
-
     xcursor-size 28
 }
 
@@ -69,10 +59,4 @@ overview {
         off
     }
 }
-environment
 
-
-blur {
-    off
-}
-spawn-sh-at-startup "sleep 1 && awww img /home/adam/Pictures/Wallpapers/slovenia-hilltop.jpg"
