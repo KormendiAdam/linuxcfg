@@ -1,4 +1,3 @@
-## Gaming
 Some useful tools
 ### Gamescope
 Setting the in-game resolution

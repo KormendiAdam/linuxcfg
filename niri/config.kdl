@@ -25,14 +25,14 @@ spawn-at-startup "awww-daemon"
 
 
 // startup cli commands
-spawn-sh-at-startup "sleep 1 && awww img /home/adam/Pictures/Wallpapers/slovenia-hilltop.jpg"
+spawn-sh-at-startup "sleep 1 && awww img /home/adam/Pictures/Wallpapers/wallpaper.jpg"
 
-// Ask applications to omit client-side decorators 
+// Ask applications to omit client-side decorators
 prefer-no-csd
 
 
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y%m%d_%H%M%S.png"
 
 
 // do not show the hotkeys at startup
@@ -59,4 +59,3 @@ overview {
         off
     }
 }
-

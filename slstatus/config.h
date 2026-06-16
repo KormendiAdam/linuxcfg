@@ -1,10 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 3000;
+static const char eth[] = "enp0s1";
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
+
 
 /* maximum output string length */
 #define MAXLEN 256
@@ -66,15 +68,17 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ username, 		" %s | ", 	NULL		},
-	{ uptime, 		"up: %s | ", 	NULL		},
-	{ keymap, 		"%s ", 		NULL		},
-	{ keyboard_indicators,	"[%s] | ",	"c?n?"		},
-	{ kernel_release, 	"%s | ", 	NULL		},
-	{ ipv4,			"%s | ", 	"enp0s1"	},
-	{ load_avg, 		"LOAD: %s | ",	NULL		},
-	{ cpu_perc, 		"CPU: %s%% | ", NULL		},
-	{ ram_perc, 		"RAM: %s%% | ", NULL		},
-	{ disk_free, 		"SSD: %s | ", 	"/"		},
-	{ datetime, 		"%s",          	"%F %T" 	},
+	{ username, " %s | ", NULL },
+	{ uptime, "up: %s | ", NULL	},
+	{ keymap, "%s ", NULL },
+	{ keyboard_indicators, "[%s] | ", "c?n?" },
+	{ kernel_release, "%s | ", NULL },
+	{ ipv4, "%s | ", eth },
+	{ load_avg, "LOAD %s | ", NULL },
+	{ cpu_perc, "CPU %s%% | ", NULL },
+	{ ram_perc, "RAM %s%% | ", NULL },
+	{ swap_perc, "SWAP %s%% | ", NULL },
+	{ disk_free, "SSD %s | ", "/" },
+	{ battery_perc, "BAT %s%% | ", "BAT0" },
+	{ datetime, "%s", "W%02V %a %F %H:%M" },
 };
