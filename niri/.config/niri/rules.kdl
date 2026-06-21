@@ -10,11 +10,17 @@ window-rule {
 }
 
 window-rule {
-    match app-id="Alacritty"
-    opacity 0.95
+    match app-id="^Alacritty$"
+    opacity 0.9
+}
+
+window-rule {
+    match app-id="^kitty$"
+    opacity 0.9
 }
 
 window-rule {
     match app-id="dev.zed.Zed"
     default-column-width { proportion 0.8; }
 }
+
