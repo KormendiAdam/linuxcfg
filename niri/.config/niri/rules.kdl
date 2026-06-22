@@ -10,17 +10,39 @@ window-rule {
 }
 
 window-rule {
-    match app-id="^Alacritty$"
-    opacity 0.9
+    match title="^Midnight Commander$"
+    //default-column-width { proportion 1.0 ; }
+    open-maximized true
 }
 
 window-rule {
+    match app-id="^Alacritty$"
     match app-id="^kitty$"
-    opacity 0.9
+    
+    opacity 0.8
+}
+
+window-rule {
+    match title="^Steam$"
+
+    open-maximized true
 }
 
 window-rule {
     match app-id="dev.zed.Zed"
     default-column-width { proportion 0.8; }
+}
+
+layer-rule {
+    match namespace="^ironbar$"
+    opacity 0.85
+}
+
+layer-rule {
+    match namespace="^awww-daemon$"
+    match namespace="^wallpaper$"
+
+    place-within-backdrop true
+    //opacity 0.75
 }
 

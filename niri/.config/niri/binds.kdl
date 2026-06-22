@@ -276,10 +276,18 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
-    Ctrl+Alt+Delete { quit; }
-
+    
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
     Mod+B repeat=false { spawn "firefox"; }
+    
+    
+    // Private
+    Mod+A	{ spawn "vivaldi" ; }
+    Mod+S	{ spawn "alacritty" "--title" "Midnight Commander"  "-e" "mc"; }
+    Mod+X	{ spawn "nautilus"; }
+    Mod+Y	{ spawn "alacritty" "--title" "NNN" "-e" "nnn"; } 
+
+    Ctrl+Alt+Delete	{ spawn-sh "poweroff"; }
 }
