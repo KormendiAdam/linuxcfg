@@ -1,0 +1,59 @@
+position: top
+height: 42
+
+start:
+    - type: workspaces
+
+
+end:
+  - type: keyboard
+    show_scroll: false
+    show_layout: true
+  
+  - type: bluetooth
+    icon_size: 32
+    format:
+      not_found: ""
+      disabled:  Off
+      enabled:  On
+      connected:  {device_alias}
+      connected_battery:  {device_alias} • {device_battery_percent}%
+    popup:
+      max_height:
+        devices: 5
+      header:  Enable Bluetooth
+      disabled: "{adapter_status}"
+      device:
+        header: "{device_alias}"
+        header_battery: "{device_alias}"
+        footer: "{device_status}"
+        footer_battery: "{device_status} • Battery {device_battery_percent}%"
+    adapter_status:
+      not_found: No Bluetooth adapters found
+      enabled: Bluetooth enabled
+      enabling: Enabling Bluetooth...
+      disabled: Bluetooth disabled
+      disabling: Disabling Bluetooth...
+    device_status:
+      connected: Connected
+      connecting: Connecting...
+      disconnected: Disconnect
+      disconnecting: Disconnecting...
+
+  - type: sys_info
+    interval:
+        memory: 30
+        cpu: 1
+        temps: 5
+        disks: 60
+        networks: 5
+    format:
+        -  {cpu_percent}% | {cpu_frequency} GHz | {temp_c@coretemp Package id 0}°C
+        #-  {memory_used} / {memory_total} GB ({memory_available} | {memory_percent2}%) | {swap_used} / {swap_total} GB ({swap_free} | {swap_percent}%)
+        #- 󰋊 {disk_used#T@/:.1} / {disk_total#T@/:.1} TB ({disk_percent@/}%) | {disk_read} / {disk_write} MB/s
+        #- 󰓢 {net_down@enp39s0} / {net_up@enp39s0} Mbps
+        #- 󰖡 {load_average_1} | {load_average_5} | {load_average_15}
+        #- 󰥔 {uptime}
+
+  - type: clock
+    format: "%d/%m/%Y %H:%M"
